@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>人生財務規劃｜Chinski汝卿團隊</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+  :root{
+    --navy-deep:#0E2740;
+    --navy:#173A5E;
+    --navy-soft:#2C5178;
+    --gold:#C6A24D;
+    --gold-soft:#E7D6A0;
+    --ivory:#FAF6EC;
+    --paper:#FFFDF8;
+    --ink:#22283A;
+    --ink-soft:#5B6270;
+    --line:#E4DAC2;
+    --radius:18px;
+    --line-green:#06C755;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .app{max-width:460px;margin:0 auto;min-height:100vh;position:relative;background:var(--ivory);padding-bottom:100px;}
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    padding:14px 20px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.06em;
+    color:var(--gold-soft);
+    background:var(--navy-deep);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(165deg,var(--navy-deep) 0%,var(--navy) 60%,var(--navy-soft) 100%);
+    color:var(--paper);
+    padding:32px 24px 30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{content:"";position:absolute;right:-60px;top:-50px;width:200px;height:200px;border:1px solid rgba(198,162,77,.3);border-radius:50%;}
+  .hero h1{
+    font-family:'Noto Serif TC',serif;
+    font-size:25px;
+    line-height:1.55;
+    font-weight:700;
+    margin:0 0 14px;
+    position:relative;z-index:1;
+  }
+  .hero .sub{
+    font-size:14px;
+    line-height:1.9;
+    color:rgba(255,253,248,.86);
+    margin:0 0 20px;
+    position:relative;z-index:1;
+  }
+  .check-list{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:9px;position:relative;z-index:1;}
+  .check-list li{
+    display:flex;align-items:center;gap:9px;
+    font-size:13.5px;font-weight:500;color:var(--paper);
+  }
+  .check-list .mark{
+    width:20px;height:20px;border-radius:50%;
+    background:rgba(198,162,77,.22);
+    color:var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;flex-shrink:0;
+  }
+  .cta-btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    width:100%;
+    background:var(--line-green);
+    color:#fff;
+    border:none;border-radius:999px;
+    padding:16px;
+    font-size:15px;font-weight:700;
+    font-family:'Noto Sans TC',sans-serif;
+    text-decoration:none;
+    position:relative;z-index:1;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(6,199,85,.28);
+  }
+  .cta-btn.inline{margin:26px 0 4px;box-shadow:0 6px 14px rgba(6,199,85,.2);}
+  .cta-sub{
+    text-align:center;font-size:11px;color:var(--ink-soft);margin-top:8px;
+  }
+
+  /* ---------- TRUST BAR ---------- */
+  .trust{
+    padding:20px 22px 22px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .trust-chips{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:14px;
+  }
+  .chip{
+    font-size:11.5px;color:var(--navy);
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:6px 12px;
+  }
+  .credentials{
+    font-size:11.5px;color:var(--ink-soft);
+    display:flex;justify-content:center;gap:16px;flex-wrap:wrap;
+  }
+  .credentials span{color:var(--gold);font-weight:700;margin-right:3px;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:34px 22px 6px;}
+  .section-eyebrow{
+    font-size:11px;letter-spacing:.16em;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:8px;
+  }
+  .section-title{
+    font-family:'Noto Serif TC',serif;font-size:19px;font-weight:700;color:var(--navy);margin:0 0 10px;line-height:1.5;
+  }
+  .section-desc{font-size:13px;color:var(--ink-soft);line-height:1.85;margin:0 0 20px;}
+
+  /* ---------- WHY FLOW ---------- */
+  .why-flow{display:flex;flex-direction:column;align-items:center;gap:6px;margin:14px 0 22px;}
+  .why-step{
+    width:100%;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 18px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .why-step .icon{font-size:24px;flex-shrink:0;}
+  .why-step .txt{font-size:14px;font-weight:700;color:var(--ink);}
+  .why-arrow{color:var(--gold);font-size:16px;line-height:1;}
+  .why-quote{
+    font-family:'Noto Serif TC',serif;
+    font-size:15px;line-height:2.05;color:var(--navy);
+    text-align:center;
+    border-top:1px solid var(--line);
+    padding-top:20px;margin-top:6px;
+  }
+
+  /* ---------- STAGE CARDS ---------- */
+  .stage-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:20px;margin-bottom:14px;
+  }
+  .stage-top{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .stage-icon{
+    width:40px;height:40px;border-radius:11px;
+    background:linear-gradient(150deg,var(--navy),var(--navy-soft));
+    display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;
+  }
+  .stage-num{font-size:10.5px;letter-spacing:.1em;color:var(--gold);font-weight:700;text-transform:uppercase;}
+  .stage-name{font-family:'Noto Serif TC',serif;font-size:14.5px;font-weight:700;color:var(--ink);margin-top:2px;}
+  .stage-oneline{
+    display:inline-block;
+    background:var(--navy-deep);color:var(--gold-soft);
+    font-size:13px;font-weight:700;
+    padding:7px 16px;border-radius:999px;
+    margin-bottom:6px;
+  }
+  details.stage-details{margin-top:10px;}
+  details.stage-details summary{
+    list-style:none;cursor:pointer;
+    font-size:12.5px;color:var(--navy);font-weight:700;
+    display:flex;align-items:center;gap:6px;
+    padding:4px 0;
+  }
+  details.stage-details summary::-webkit-details-marker{display:none;}
+  details.stage-details summary .chevron{transition:transform .2s ease;color:var(--gold);}
+  details.stage-details[open] summary .chevron{transform:rotate(180deg);}
+  .stage-details-body{padding-top:12px;}
+  .stage-details-body ul{margin:0 0 12px;padding:0;list-style:none;}
+  .stage-details-body ul li{
+    font-size:13px;line-height:1.9;color:var(--ink);padding-left:18px;position:relative;margin-bottom:5px;
+  }
+  .stage-details-body ul li::before{
+    content:"";position:absolute;left:1px;top:8px;width:5px;height:5px;background:var(--gold);border-radius:1px;transform:rotate(45deg);
+  }
+  .stage-goal{font-size:12px;color:var(--ink-soft);background:var(--ivory);border-radius:10px;padding:10px 12px;line-height:1.75;}
+
+  /* ---------- COMPARISON ---------- */
+  .compare-wrap{display:flex;gap:10px;margin:14px 0 6px;}
+  .compare-col{flex:1;border-radius:14px;padding:16px 14px;}
+  .compare-col.bad{background:var(--paper);border:1px solid var(--line);}
+  .compare-col.good{background:var(--navy-deep);}
+  .compare-head{font-size:12.5px;font-weight:700;margin-bottom:12px;}
+  .compare-col.bad .compare-head{color:var(--ink-soft);}
+  .compare-col.good .compare-head{color:var(--gold-soft);}
+  .compare-col ul{list-style:none;margin:0;padding:0;}
+  .compare-col li{font-size:12px;line-height:1.7;margin-bottom:9px;display:flex;gap:6px;align-items:flex-start;}
+  .compare-col.bad li{color:var(--ink-soft);}
+  .compare-col.good li{color:var(--paper);}
+
+  /* ---------- CASE STORIES ---------- */
+  .case-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:18px;margin-bottom:12px;
+  }
+  .case-tag{
+    display:inline-block;font-size:11px;font-weight:700;color:var(--gold);
+    background:rgba(198,162,77,.12);border-radius:999px;padding:4px 12px;margin-bottom:12px;
+  }
+  .case-story{display:flex;flex-direction:column;gap:8px;}
+  .case-row{display:flex;gap:10px;align-items:flex-start;}
+  .case-label{
+    flex-shrink:0;width:44px;font-size:11.5px;font-weight:700;color:var(--ink-soft);padding-top:1px;
+  }
+  .case-row.result .case-label{color:var(--navy);}
+  .case-row p{margin:0;font-size:13px;line-height:1.8;color:var(--ink);}
+  .case-arrow{padding-left:44px;color:var(--gold);font-size:13px;}
+
+  /* ---------- MINI FLOW (service process) ---------- */
+  .mini-row{display:flex;align-items:flex-start;position:relative;margin-top:6px;}
+  .mini-row::before{content:"";position:absolute;top:17px;left:9%;right:9%;height:1px;background:var(--line);z-index:0;}
+  .mini-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;position:relative;z-index:1;text-align:center;}
+  .mini-step .circle{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--navy);border:1px solid var(--navy);color:var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Noto Serif TC',serif;font-weight:700;font-size:13px;
+  }
+  .mini-step .label{font-size:10.5px;font-weight:600;color:var(--ink-soft);line-height:1.4;}
+
+  /* ---------- CONSULT INCLUDES ---------- */
+  .includes-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;
+  }
+  .includes-time{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12px;font-weight:700;color:var(--navy);
+    background:var(--ivory);border-radius:999px;padding:6px 14px;margin-bottom:14px;
+  }
+  .includes-list{list-style:none;margin:0;padding:0;}
+  .includes-list li{
+    display:flex;align-items:center;gap:10px;
+    font-size:13.5px;color:var(--ink);line-height:1.6;padding:8px 0;
+    border-bottom:1px solid var(--ivory);
+  }
+  .includes-list li:last-child{border-bottom:none;color:var(--navy);font-weight:700;}
+  .includes-list .mark{
+    width:20px;height:20px;border-radius:50%;background:rgba(198,162,77,.16);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;
+  }
+
+  /* ---------- FAQ ---------- */
+  details.faq{border-bottom:1px solid var(--line);padding:15px 0;}
+  details.faq:first-child{padding-top:0;}
+  details.faq summary{
+    list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;
+    font-size:13.5px;font-weight:700;color:var(--navy);
+  }
+  details.faq summary::-webkit-details-marker{display:none;}
+  details.faq summary .qn{color:var(--gold);margin-right:6px;}
+  details.faq summary .chevron{color:var(--gold);flex-shrink:0;transition:transform .2s ease;}
+  details.faq[open] summary .chevron{transform:rotate(180deg);}
+  .faq-a{font-size:13px;line-height:1.9;color:var(--ink-soft);margin:10px 0 0;padding-right:22px;}
+
+  /* ---------- FINAL BOOKING ---------- */
+  .final-card{
+    background:linear-gradient(165deg,var(--navy-deep),var(--navy));
+    border-radius:20px;padding:26px 22px;color:var(--paper);text-align:center;
+  }
+  .final-card h2{font-family:'Noto Serif TC',serif;font-size:19px;margin:0 0 12px;}
+  .final-card p{font-size:13px;line-height:1.9;color:rgba(255,253,248,.85);margin:0 0 20px;}
+
+  /* ---------- QUICK PRODUCTS (final section) ---------- */
+  .quick-section{background:var(--paper);border:1px dashed var(--gold);border-radius:16px;padding:20px 18px;}
+  .qp-card{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--ivory);}
+  .qp-card:last-of-type{border-bottom:none;}
+  .qp-icon{width:32px;height:32px;border-radius:9px;background:var(--ivory);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+  .qp-card h4{font-size:13px;font-weight:700;margin:0 0 3px;color:var(--ink);}
+  .qp-card p{font-size:11.5px;line-height:1.7;color:var(--ink-soft);margin:0;}
+
+  /* ---------- FIXED CTA ---------- */
+  .fixed-cta{
+    position:fixed;bottom:0;left:0;right:0;max-width:460px;margin:0 auto;
+    background:var(--paper);border-top:1px solid var(--line);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    z-index:40;
+  }
+  .fixed-cta .line-btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--line-green);color:#fff;border:none;border-radius:999px;
+    padding:14px;font-size:14px;font-weight:700;text-decoration:none;
+  }
+
+  .disclaimer{
+    padding:0 22px 18px;
+    font-size:10.5px;
+    line-height:1.85;
+    color:var(--ink-soft);
+    opacity:.85;
+  }
+  .disclaimer .d-title{font-weight:700;color:var(--ink);margin-bottom:6px;display:block;}
+
+  footer{padding:26px 22px 6px;text-align:center;font-size:11px;color:var(--ink-soft);}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="topbar">Chinski汝卿團隊．人生財務規劃</div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>陪您建立安心且可持續的<br>人生財務系統</h1>
+    <p class="sub">不是推銷商品，而是先了解您的現況，<br>一起建立適合您的人生財務規劃。</p>
+    <ul class="check-list">
+      <li><span class="mark">✓</span>不先推薦商品</li>
+      <li><span class="mark">✓</span>免費初步財務諮詢</li>
+      <li><span class="mark">✓</span>長期陪伴與定期檢視</li>
+    </ul>
+    <a class="cta-btn" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜免費初步諮詢</a>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="trust">
+    <div class="trust-chips">
+      <span class="chip">人生財務規劃</span>
+      <span class="chip">保障規劃</span>
+      <span class="chip">退休規劃</span>
+      <span class="chip">資產配置</span>
+      <span class="chip">財富傳承</span>
+    </div>
+    <div class="credentials">
+      <div><span>✔</span>富邦人壽業務經理</div>
+      <div><span>✔</span>人生財務規劃顧問</div>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <section>
+    <div class="section-eyebrow">Why</div>
+    <div class="section-title">為什麼需要財務規劃？</div>
+    <div class="why-flow">
+      <div class="why-step"><span class="icon">🏥</span><span class="txt">意外、生病</span></div>
+      <div class="why-arrow">↓</div>
+      <div class="why-step"><span class="icon">💰</span><span class="txt">動用原本的存款</span></div>
+      <div class="why-arrow">↓</div>
+      <div class="why-step"><span class="icon">📉</span><span class="txt">人生計畫被迫延後</span></div>
+    </div>
+    <div class="why-quote">財務規劃，就是降低人生的不確定性，<br>讓人生可以照著自己的步調前進。</div>
+    <a class="cta-btn inline" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜了解我的財務現況</a>
+  </section>
+
+  <!-- 3 STAGES -->
+  <section>
+    <div class="section-eyebrow">System</div>
+    <div class="section-title">三階段人生財務系統</div>
+    <div class="section-desc">讓您一眼看懂我們陪您做的三件事。</div>
+
+    <div class="stage-card">
+      <div class="stage-top">
+        <div class="stage-icon">🛡️</div>
+        <div><div class="stage-num">Stage 01</div><div class="stage-name">建立財務防護網</div></div>
+      </div>
+      <div class="stage-oneline">保護收入</div>
+      <details class="stage-details">
+        <summary>查看規劃內容 <span class="chevron">▾</span></summary>
+        <div class="stage-details-body">
+          <ul>
+            <li>醫療保障</li><li>意外保障</li><li>重大疾病與重大傷病</li>
+            <li>長期照顧規劃</li><li>家庭責任與收入中斷風險</li>
+          </ul>
+          <div class="stage-goal">目標：意外或疾病發生時，不需要因為醫療費用而打亂原本的人生規劃。</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-top">
+        <div class="stage-icon">📈</div>
+        <div><div class="stage-num">Stage 02</div><div class="stage-name">建立長期財富系統</div></div>
+      </div>
+      <div class="stage-oneline">累積資產</div>
+      <details class="stage-details">
+        <summary>查看規劃內容 <span class="chevron">▾</span></summary>
+        <div class="stage-details-body">
+          <ul>
+            <li>資產配置</li><li>現金流規劃</li><li>投資風險管理</li>
+            <li>適度提高資產曝險機會</li><li>定期再平衡調整</li><li>退休規劃</li>
+          </ul>
+          <div class="stage-goal">目標：不追求短期高報酬，而是透過紀律與配置，讓資產有機會穩定累積。</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-top">
+        <div class="stage-icon">🏛️</div>
+        <div><div class="stage-num">Stage 03</div><div class="stage-name">建立財富傳承計畫</div></div>
+      </div>
+      <div class="stage-oneline">留下價值</div>
+      <details class="stage-details">
+        <summary>查看規劃內容 <span class="chevron">▾</span></summary>
+        <div class="stage-details-body">
+          <ul>
+            <li>財富傳承</li><li>贈與安排</li><li>遺囑規劃</li>
+            <li>信託規劃</li><li>長照資金準備</li>
+          </ul>
+          <div class="stage-goal">目標：降低家庭爭議、詐騙風險、長輩失能或失智後的財產管理問題，以及第二代過早承接大量資產的風險。</div>
+        </div>
+      </details>
+    </div>
+    <a class="cta-btn inline" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜開始第一步規劃</a>
+  </section>
+
+  <!-- COMPARISON -->
+  <section>
+    <div class="section-eyebrow">Our Approach</div>
+    <div class="section-title">我們的服務理念</div>
+    <div class="compare-wrap">
+      <div class="compare-col bad">
+        <div class="compare-head">一般商品銷售</div>
+        <ul>
+          <li>❌ 先推薦商品</li>
+          <li>❌ 以商品為中心</li>
+          <li>❌ 一次成交</li>
+        </ul>
+      </div>
+      <div class="compare-col good">
+        <div class="compare-head">我們</div>
+        <ul>
+          <li>✅ 先了解人生目標</li>
+          <li>✅ 建立完整財務系統</li>
+          <li>✅ 長期陪伴</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STORIES -->
+  <section>
+    <div class="section-eyebrow">Stories</div>
+    <div class="section-title">服務故事</div>
+    <div class="section-desc">以下為匿名化的服務歷程。</div>
+
+    <div class="case-card">
+      <div class="case-tag">資產活化・現金流</div>
+      <div class="case-story">
+        <div class="case-row"><div class="case-label">原本</div><p>資產大多停滯，現金流吃緊，難以兼顧照顧孩子的開銷。</p></div>
+        <div class="case-arrow">↓</div>
+        <div class="case-row result"><div class="case-label">結果</div><p>重新配置資產後，協助改善現金流規劃，能更從容地照顧孩子。</p></div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-tag">退休規劃</div>
+      <div class="case-story">
+        <div class="case-row"><div class="case-label">原本</div><p>不確定退休準備是否足夠，方向模糊。</p></div>
+        <div class="case-arrow">↓</div>
+        <div class="case-row result"><div class="case-label">結果</div><p>建立清楚、可執行的退休金累積方向。</p></div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-tag">單身族・信託規劃</div>
+      <div class="case-story">
+        <div class="case-row"><div class="case-label">原本</div><p>一個人打拼，擔心未來沒有人能好好照顧孩子。</p></div>
+        <div class="case-arrow">↓</div>
+        <div class="case-row result"><div class="case-label">結果</div><p>提前完成信託規劃，即使沒有配偶協助，也能安心安排孩子的照顧資源。</p></div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:var(--ink-soft);line-height:1.8;margin:2px 0 0;">※ 以上案例皆為匿名化示意，實際規劃內容將依個人財務狀況、需求及相關條件而有所不同。</p>
+
+    <a class="cta-btn inline" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜與顧問聊聊</a>
+  </section>
+
+  <!-- SERVICE FLOW -->
+  <section>
+    <div class="section-eyebrow">Process</div>
+    <div class="section-title">服務流程</div>
+    <div class="mini-row">
+      <div class="mini-step"><div class="circle">1</div><div class="label">免費諮詢</div></div>
+      <div class="mini-step"><div class="circle">2</div><div class="label">財務分析</div></div>
+      <div class="mini-step"><div class="circle">3</div><div class="label">規劃建議</div></div>
+      <div class="mini-step"><div class="circle">4</div><div class="label">陪伴檢視</div></div>
+    </div>
+  </section>
+
+  <!-- CONSULT INCLUDES -->
+  <section>
+    <div class="section-eyebrow">First Session</div>
+    <div class="section-title">第一次諮詢，可以得到什麼？</div>
+    <div class="includes-card">
+      <div class="includes-time">⏱ 約 30～60 分鐘</div>
+      <ul class="includes-list">
+        <li><span class="mark">✓</span>初步了解保障現況</li>
+        <li><span class="mark">✓</span>現金流檢視</li>
+        <li><span class="mark">✓</span>資產配置方向建議</li>
+        <li><span class="mark">✓</span>退休準備討論</li>
+        <li><span class="mark">✓</span>不需要當場購買任何商品</li>
+      </ul>
+    </div>
+    <a class="cta-btn inline" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜免費初步諮詢</a>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-eyebrow">FAQ</div>
+    <div class="section-title">常見問題</div>
+
+    <details class="faq">
+      <summary><span><span class="qn">①</span>會不會一直推銷商品？</span><span class="chevron">▾</span></summary>
+      <p class="faq-a">不會。流程是先做財務分析，找出保障缺口與可優化的方向，有需要時才會一起討論適合執行的方案，不是諮詢一開始就推薦商品。</p>
+    </details>
+    <details class="faq">
+      <summary><span><span class="qn">②</span>一定要買保單嗎？</span><span class="chevron">▾</span></summary>
+      <p class="faq-a">不一定。是否購買由您決定，我們的角色是協助您看清楚現況與可行的選項。</p>
+    </details>
+    <details class="faq">
+      <summary><span><span class="qn">③</span>免費嗎？</span><span class="chevron">▾</span></summary>
+      <p class="faq-a">免費。初步財務諮詢皆為免費，希望讓每位客戶都能先了解自己的財務現況，再決定是否需要進一步規劃。</p>
+    </details>
+    <details class="faq">
+      <summary><span><span class="qn">④</span>為什麼免費？</span><span class="chevron">▾</span></summary>
+      <p class="faq-a">服務費由合作機構支付，不會另外向客戶收取顧問費，因此您可以安心提出任何想了解的問題。</p>
+    </details>
+    <details class="faq">
+      <summary><span><span class="qn">⑤</span>第一次諮詢會聊什麼？</span><span class="chevron">▾</span></summary>
+      <p class="faq-a">會聊您的家庭狀況、保障現況、資產配置與人生目標，初步了解您目前的財務全貌。</p>
+    </details>
+  </section>
+
+  <!-- FINAL BOOKING -->
+  <section>
+    <div class="final-card">
+      <h2>預約免費初步諮詢</h2>
+      <p>人生財務規劃，不代表一定需要購買任何商品。<br>第一次諮詢的目的，是協助您了解目前的財務現況與可優化方向，<br>再由您自行決定是否需要後續規劃。</p>
+      <a class="cta-btn" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜免費初步諮詢</a>
+    </div>
+  </section>
+
+  <!-- QUICK PRODUCTS (moved to the very end) -->
+  <section>
+    <div class="section-eyebrow">附加服務</div>
+    <div class="section-title">商品快速申辦區</div>
+    <div class="section-desc">單一商品需求，不需要完整財務諮詢流程，團隊夥伴可直接協助完成申辦。若您已有明確商品需求，也可直接協助您完成相關申辦流程。</div>
+    <div class="quick-section">
+      <div class="qp-card"><div class="qp-icon">✈️</div><div><h4>旅遊平安保險</h4><p>出國或國內旅遊的平安與意外醫療保障，行前即可線上投保。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">🚗</div><div><h4>車險</h4><p>汽機車第三人責任險、車體險等，到期前協助比較與續保。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">🩺</div><div><h4>醫師責任保險</h4><p>醫療從業人員的執業責任保障，協助釐清承保範圍。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">🏠</div><div><h4>家庭成員意外責任保險</h4><p>家人在居家或日常生活中造成第三人損害的責任保障。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">🧾</div><div><h4>雇補險</h4><p>雇主對員工的補償責任相關保障，協助企業主釐清投保方式。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">🏢</div><div><h4>公司團險</h4><p>為企業員工規劃團體保險，涵蓋醫療、意外等基礎保障方案。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">⛳</div><div><h4>高爾夫球險</h4><p>球敘期間的意外、責任與球具相關保障，也包含一桿進洞的相關意外。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">🏦</div><div><h4>信貸與房貸申請</h4><p>協助整理資料、比較銀行方案，加速信貸或房貸申請流程。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">🍎</div><div><h4>教師責任保險</h4><p>教職人員執行教學職務時的責任保障，協助釐清承保範圍。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">🏗️</div><div><h4>工程險</h4><p>工程施作期間的意外損失與第三人責任保障。</p></div></div>
+      <div class="qp-card"><div class="qp-icon">🚛</div><div><h4>運輸險</h4><p>貨物運送過程中的毀損、滅失等風險保障。</p></div></div>
+    </div>
+    <a class="cta-btn inline" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE，告訴我們您的需求</a>
+  </section>
+
+  <footer>Chinski汝卿團隊．人生財務規劃</footer>
+
+  <div class="disclaimer">
+    <span class="d-title">【免責聲明】</span>
+    本網站內容僅供一般人生財務規劃觀念分享，不構成任何投資、稅務、法律或其他專業建議。各項規劃內容仍須依個人財務狀況、需求、風險承受能力及相關法令，由專人提供適當建議。如涉及保險商品，其保障內容、權利義務及核保結果，均應以各保險公司正式保單條款及相關規定為準。
+  </div>
+
+  <!-- FIXED CTA -->
+  <div class="fixed-cta">
+    <a class="line-btn" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入官方 LINE，預約免費諮詢</a>
+  </div>
+
+</div>
+</body>
+</html>
