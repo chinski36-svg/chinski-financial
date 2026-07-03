@@ -136,10 +136,12 @@
     border:1px solid var(--line);
     border-radius:14px;
     padding:16px 18px;
-    display:flex;align-items:center;gap:14px;
+    display:flex;align-items:flex-start;gap:14px;
   }
-  .why-step .icon{font-size:24px;flex-shrink:0;}
+  .why-step .icon{font-size:24px;flex-shrink:0;margin-top:2px;}
+  .why-text{display:flex;flex-direction:column;gap:4px;}
   .why-step .txt{font-size:14px;font-weight:700;color:var(--ink);}
+  .why-step .sub{font-size:11.5px;font-weight:400;color:var(--ink-soft);line-height:1.65;}
   .why-arrow{color:var(--gold);font-size:16px;line-height:1;}
   .why-quote{
     font-family:'Noto Serif TC',serif;
@@ -315,13 +317,13 @@
   <!-- HERO -->
   <div class="hero">
     <h1>陪您建立安心且可持續的<br>人生財務系統</h1>
-    <p class="sub">不是推銷商品，而是先了解您的現況，<br>一起建立適合您的人生財務規劃。</p>
+    <p class="sub">了解保障、現金流與人生目標，<br>一步一步建立屬於自己的財務方向，<br>讓未來的重要選擇，更有底氣。</p>
     <ul class="check-list">
-      <li><span class="mark">✓</span>不先推薦商品</li>
-      <li><span class="mark">✓</span>免費初步財務諮詢</li>
-      <li><span class="mark">✓</span>長期陪伴與定期檢視</li>
+      <li><span class="mark">✓</span>了解自己的保障與財務現況</li>
+      <li><span class="mark">✓</span>找到適合自己的財務方向</li>
+      <li><span class="mark">✓</span>長期陪伴，隨人生階段調整</li>
     </ul>
-    <a class="cta-btn" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜免費初步諮詢</a>
+    <a class="cta-btn" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜了解自己的財務現況</a>
   </div>
 
   <!-- TRUST BAR -->
@@ -342,16 +344,34 @@
   <!-- WHY -->
   <section>
     <div class="section-eyebrow">Why</div>
-    <div class="section-title">為什麼需要財務規劃？</div>
+    <div class="section-title">為什麼需要人生財務規劃？</div>
     <div class="why-flow">
-      <div class="why-step"><span class="icon">🏥</span><span class="txt">意外、生病</span></div>
+      <div class="why-step">
+        <span class="icon">🏥</span>
+        <div class="why-text">
+          <div class="txt">人生總有突發狀況</div>
+          <div class="sub">疾病、失業、照顧父母、孩子教育、退休等人生變化</div>
+        </div>
+      </div>
       <div class="why-arrow">↓</div>
-      <div class="why-step"><span class="icon">💰</span><span class="txt">動用原本的存款</span></div>
+      <div class="why-step">
+        <span class="icon">💰</span>
+        <div class="why-text">
+          <div class="txt">財務開始失去方向</div>
+          <div class="sub">不知道該先準備什麼、現金流受到影響、人生規劃開始混亂</div>
+        </div>
+      </div>
       <div class="why-arrow">↓</div>
-      <div class="why-step"><span class="icon">📉</span><span class="txt">人生計畫被迫延後</span></div>
+      <div class="why-step">
+        <span class="icon">📉</span>
+        <div class="why-text">
+          <div class="txt">人生目標因此延後</div>
+          <div class="sub">買房、退休、家庭、夢想，都可能因此受到影響</div>
+        </div>
+      </div>
     </div>
-    <div class="why-quote">財務規劃，就是降低人生的不確定性，<br>讓人生可以照著自己的步調前進。</div>
-    <a class="cta-btn inline" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜了解我的財務現況</a>
+    <div class="why-quote">很多人努力工作，<br>卻不知道自己的努力，是否真的朝向想要的人生。<br><br>人生財務規劃，不只是規劃今天，<br>更是陪您一步一步完成未來想過的人生。</div>
+    <a class="cta-btn inline" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜看看適合自己的第一步</a>
   </section>
 
   <!-- 3 STAGES -->
@@ -365,7 +385,7 @@
         <div class="stage-icon">🛡️</div>
         <div><div class="stage-num">Stage 01</div><div class="stage-name">建立財務防護網</div></div>
       </div>
-      <div class="stage-oneline">保護收入</div>
+      <div class="stage-oneline">建立安心基礎</div>
       <details class="stage-details">
         <summary>查看規劃內容 <span class="chevron">▾</span></summary>
         <div class="stage-details-body">
@@ -373,7 +393,7 @@
             <li>醫療保障</li><li>意外保障</li><li>重大疾病與重大傷病</li>
             <li>長期照顧規劃</li><li>家庭責任與收入中斷風險</li>
           </ul>
-          <div class="stage-goal">目標：意外或疾病發生時，不需要因為醫療費用而打亂原本的人生規劃。</div>
+          <div class="stage-goal">目標：建立完整保障基礎，讓人生遇到變化時，依然有能力守護自己與家人的生活。</div>
         </div>
       </details>
     </div>
@@ -381,17 +401,17 @@
     <div class="stage-card">
       <div class="stage-top">
         <div class="stage-icon">📈</div>
-        <div><div class="stage-num">Stage 02</div><div class="stage-name">建立長期財富系統</div></div>
+        <div><div class="stage-num">Stage 02</div><div class="stage-name">建立人生財務系統</div></div>
       </div>
       <div class="stage-oneline">累積資產</div>
       <details class="stage-details">
         <summary>查看規劃內容 <span class="chevron">▾</span></summary>
         <div class="stage-details-body">
           <ul>
-            <li>保單整合與健診</li><li>現金流規劃（以保險商品為主）</li>
-            <li>儲蓄型保單搭配建議</li><li>退休金準備方向討論</li>
+            <li>保單整合</li><li>現金流規劃方向</li>
+            <li>長期資產累積方向</li><li>退休準備方向討論</li>
           </ul>
-          <div class="stage-goal">目標：不追求短期效果，而是透過保單整合與紀律儲蓄，協助您逐步累積長期的財務基礎。</div>
+          <div class="stage-goal">目標：依照不同人生階段與需求，陪伴您逐步建立安心且可持續的人生財務系統。</div>
         </div>
       </details>
     </div>
@@ -406,10 +426,10 @@
         <summary>查看規劃內容 <span class="chevron">▾</span></summary>
         <div class="stage-details-body">
           <ul>
-            <li>保險金信託介紹與規劃協助</li><li>資產傳承觀念分享</li>
-            <li>長照資金準備</li><li>法律／稅務相關需求：協助轉介合作專業人士</li>
+            <li>保險金信託規劃方向討論</li><li>資產傳承觀念分享</li>
+            <li>長照資金準備</li><li>法律、稅務等專業需求，將協助銜接相關專業人士</li>
           </ul>
-          <div class="stage-goal">目標：透過保險金信託等工具與資產傳承觀念，協助降低家庭爭議與資產管理風險；如涉及法律或稅務規劃，將協助轉介合作專業人士。</div>
+          <div class="stage-goal">目標：透過保險金信託等工具與資產傳承觀念，協助降低家庭爭議與資產管理風險；如涉及法律或稅務規劃，將協助銜接相關專業人士。</div>
         </div>
       </details>
     </div>
@@ -433,11 +453,12 @@
         <div class="compare-head">我們</div>
         <ul>
           <li>✅ 先了解人生目標</li>
-          <li>✅ 建立完整保障與傳承規劃</li>
-          <li>✅ 長期陪伴</li>
+          <li>✅ 建立人生財務系統</li>
+          <li>✅ 長期陪伴調整</li>
         </ul>
       </div>
     </div>
+    <div class="why-quote" style="border-top:none;padding-top:22px;">陪伴一陣子，還是陪伴一輩子。<br>我們選擇後者。</div>
   </section>
 
   <!-- CASE STORIES -->
@@ -447,35 +468,35 @@
     <div class="section-desc">以下為匿名化的服務歷程。</div>
 
     <div class="case-card">
-      <div class="case-tag">保單整合・現金流改善</div>
+      <div class="case-tag">不知道該怎麼開始</div>
       <div class="case-story">
-        <div class="case-row"><div class="case-label">原本</div><p>手上雖有一些保單與資產，但現金流吃緊，難以兼顧照顧孩子的開銷。</p></div>
+        <div class="case-row"><div class="case-label">原本</div><p>不知道自己的保障、資產與現金流是否足以支撐未來的人生目標，也不知道該從哪裡開始規劃。</p></div>
         <div class="case-arrow">↓</div>
-        <div class="case-row result"><div class="case-label">結果</div><p>透過保單健診與整合，改善了現金流狀況，能更從容地照顧孩子。</p></div>
+        <div class="case-row result"><div class="case-label">結果</div><p>透過人生財務規劃，逐步建立保障、現金流與資產方向，讓人生目標可以更安心地一步一步完成。</p></div>
       </div>
     </div>
 
     <div class="case-card">
-      <div class="case-tag">退休金準備方向討論</div>
+      <div class="case-tag">退休生活方向</div>
       <div class="case-story">
-        <div class="case-row"><div class="case-label">原本</div><p>不確定退休準備是否足夠，方向模糊。</p></div>
+        <div class="case-row"><div class="case-label">原本</div><p>不確定退休後的生活樣貌，也不知道財務準備是否足以支撐理想中的退休人生。</p></div>
         <div class="case-arrow">↓</div>
-        <div class="case-row result"><div class="case-label">結果</div><p>透過討論，逐步釐清退休金準備的方向與節奏。</p></div>
+        <div class="case-row result"><div class="case-label">結果</div><p>透過長期財務規劃，逐步釐清退休後的生活方向與準備節奏，讓退休人生更有方向感。</p></div>
       </div>
     </div>
 
     <div class="case-card">
-      <div class="case-tag">單身族・保險金信託</div>
+      <div class="case-tag">提前守護孩子未來</div>
       <div class="case-story">
-        <div class="case-row"><div class="case-label">原本</div><p>一個人打拼，擔心未來沒有人能好好照顧孩子。</p></div>
+        <div class="case-row"><div class="case-label">原本</div><p>一個人打拼，擔心自己萬一發生什麼事，沒有人能好好照顧孩子的未來。</p></div>
         <div class="case-arrow">↓</div>
-        <div class="case-row result"><div class="case-label">結果</div><p>透過保險金信託的介紹與規劃協助，即使沒有配偶協助，也能提前為孩子安排照顧資源。</p></div>
+        <div class="case-row result"><div class="case-label">結果</div><p>透過清楚的財務方向，逐步安排保障與資源，即使沒有配偶協助，也能為孩子的未來做好準備。</p></div>
       </div>
     </div>
 
     <p style="font-size:11px;color:var(--ink-soft);line-height:1.8;margin:2px 0 0;">※ 以上案例皆為匿名化示意，實際規劃內容將依個人財務狀況、需求及相關條件而有所不同。</p>
 
-    <a class="cta-btn inline" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜與顧問聊聊</a>
+    <a class="cta-btn inline" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜聊聊您的狀況</a>
   </section>
 
   <!-- SERVICE FLOW -->
@@ -484,7 +505,7 @@
     <div class="section-title">服務流程</div>
     <div class="mini-row">
       <div class="mini-step"><div class="circle">1</div><div class="label">免費諮詢</div></div>
-      <div class="mini-step"><div class="circle">2</div><div class="label">財務分析</div></div>
+      <div class="mini-step"><div class="circle">2</div><div class="label">現況了解</div></div>
       <div class="mini-step"><div class="circle">3</div><div class="label">規劃建議</div></div>
       <div class="mini-step"><div class="circle">4</div><div class="label">陪伴檢視</div></div>
     </div>
@@ -514,10 +535,10 @@
 
     <details class="faq">
       <summary><span><span class="qn">①</span>會不會一直推銷商品？</span><span class="chevron">▾</span></summary>
-      <p class="faq-a">不會。流程是先做財務分析，找出保障缺口與可優化的方向，有需要時才會一起討論適合執行的方案，不是諮詢一開始就推薦商品。</p>
+      <p class="faq-a">不會。<br>第一次諮詢主要是了解您的家庭、保障、現金流與人生目標。<br>如果沒有適合的規劃方向，我們也會直接告訴您，而不是推薦商品。</p>
     </details>
     <details class="faq">
-      <summary><span><span class="qn">②</span>一定要買保單嗎？</span><span class="chevron">▾</span></summary>
+      <summary><span><span class="qn">②</span>需要購買保單嗎？</span><span class="chevron">▾</span></summary>
       <p class="faq-a">不一定。是否購買由您決定，我們的角色是協助您看清楚現況與可行的選項。</p>
     </details>
     <details class="faq">
@@ -537,17 +558,17 @@
   <!-- FINAL BOOKING -->
   <section>
     <div class="final-card">
-      <h2>預約免費初步諮詢</h2>
-      <p>人生財務規劃，不代表一定需要購買任何商品。<br>第一次諮詢的目的，是協助您了解目前的財務現況與可優化方向，<br>再由您自行決定是否需要後續規劃。</p>
-      <a class="cta-btn" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜免費初步諮詢</a>
+      <h2>開始您的人生財務系統</h2>
+      <p>建立人生財務系統，不代表一定需要購買任何商品。<br>第一次諮詢的目的，是協助您了解目前的財務現況與可優化方向，<br>再由您自行決定是否需要後續規劃。</p>
+      <a class="cta-btn" href="https://lin.ee/Rvy86OU" target="_blank" rel="noopener">💬 加入 LINE｜一起建立人生財務系統</a>
     </div>
   </section>
 
   <!-- QUICK PRODUCTS (moved to the very end) -->
   <section>
     <div class="section-eyebrow">附加服務</div>
-    <div class="section-title">商品快速申辦區</div>
-    <div class="section-desc">單一商品需求，不需要完整財務諮詢流程，團隊夥伴可直接協助完成申辦。若您已有明確商品需求，也可直接協助您完成相關申辦流程。</div>
+    <div class="section-title">快速申辦服務</div>
+    <div class="section-desc">若您已有明確的保障或金融服務需求，不需要完整的人生財務諮詢流程，團隊夥伴可直接協助您完成申辦。</div>
     <div class="quick-section">
       <div class="qp-card"><div class="qp-icon">✈️</div><div><h4>旅遊平安保險</h4><p>出國或國內旅遊的平安與意外醫療保障，行前即可線上投保。</p></div></div>
       <div class="qp-card"><div class="qp-icon">🚗</div><div><h4>車險</h4><p>汽機車第三人責任險、車體險等，到期前協助比較與續保。</p></div></div>
@@ -568,7 +589,7 @@
 
   <div class="disclaimer">
     <span class="d-title">【免責聲明】</span>
-    本網站內容僅供一般人生財務規劃觀念分享，不構成任何投資、稅務、法律或其他專業建議，亦非具體投資操作、貸款核准或稅務申報之保證。各項規劃內容仍須依個人財務狀況、需求、風險承受能力及相關法令，由專人提供適當建議。如涉及保險商品，其保障內容、權利義務及核保結果，均應以各保險公司正式保單條款及相關規定為準；如涉及信貸、房貸等金融商品，其核准與否、額度及條件，均以往來金融機構之審核結果為準。本服務不提供法律、稅務申報或遺囑代書等專業服務，如有相關需求，將協助轉介合作專業人士，實際內容仍應以該專業人士之意見為準。
+    本網站內容僅供一般人生財務規劃觀念分享，不構成任何投資、稅務、法律或其他專業建議，亦非具體投資操作、貸款核准或稅務申報之保證。各項規劃內容仍須依個人財務狀況、需求、風險承受能力及相關法令，由專人提供適當建議。如涉及保險商品，其保障內容、權利義務及核保結果，均應以各保險公司正式保單條款及相關規定為準；如涉及信貸、房貸等金融商品，其核准與否、額度及條件，均以往來金融機構之審核結果為準。本服務不提供法律、稅務申報或遺囑代書等專業服務，如有相關需求，將協助銜接合作專業人士，實際內容仍應以該專業人士之意見為準。
   </div>
 
   <!-- FIXED CTA -->
